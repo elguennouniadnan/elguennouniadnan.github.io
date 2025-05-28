@@ -30,15 +30,11 @@
 						<p>Bringing Ideas to Life through Development</p>
 					</div>
 
-				<!-- Header -->
-					<!-- <header id="header">
-						<a href="index.html" class="logo intro"><h1 class="c-footer__title">Adnan</h1></a>
-					</header> -->
-
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">My Portfolio</a></li>
+							<li class="active" id="tab-apps"><a href="#" onclick="showTab('apps');return false;">Apps</a></li>
+							<li id="tab-workflow"><a href="#" onclick="showTab('workflow');return false;">Workflow Automations</a></li>
 							<!-- <li><a href="generic.html">IOS</a></li>
 							<li><a href="elements.html">Flutter</a></li>
 							<li><a href="elements.html">React</a></li>
@@ -56,16 +52,16 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 								<header class="major">
-									<h3>Welcome to my developer portfolio! </h3>
-									<br>
-									<p> With over 4 years of experience in creating and maintaining web/mobile applications, I am a passionate and versatile developer who enjoys solving problems and learning new technologies. My mission is to deliver user-friendly, high-quality, and innovative solutions that meet the needs and expectations of my clients. </p>
-									<p>I have a proven experience in mobile applications development, with proficiency in React Native, Expo and Javascript. </p>
-									<p>I am currently a freelance developer, available for contracts, and looking for new challenges and opportunities.</p>
+									<p>With over 4 years of experience delivering scalable web and mobile applications, I’m a full-stack developer who blends traditional development with modern automation and AI tools to ship faster, smarter solutions.</p>
+									<p>I work with JavaScript frameworks like Vue.js/Nuxt and React/Next on the front end, and React Native/Expo for mobile. I build performant, user-focused interfaces while maintaining clean, modular architecture.</p>
+									<p>Beyond conventional development, I specialize in workflow automation using tools like n8n and Zapier, helping teams automate repetitive tasks, streamline operations, and connect services with minimal code. I'm especially passionate about using AI models and automation platforms to prototype backend services quickly — making product iterations faster and more cost-effective.</p>
+									<p>Whether you're a startup, agency, or team looking to move quickly without sacrificing quality, I can help you build, automate, and ship smarter.</p>
+									<p>Currently open for freelance and contract work </p>
 								</header>
 							</article> 
 
-						<!-- Posts -->
-							<section class="posts">
+						<!-- Posts Tab Content -->
+							<section class="posts" id="tab-content-apps">
 								<article>
 									<header>
 										<h3>Lyve Finance<h3>
@@ -316,9 +312,29 @@
  									    <li>Built with a user-friendly front-end using Handlebars, and a robust back-end powered by Node.js.</li>
 									</ul>
 								</article>
-								<article></article>
 							</section>
 
+						<!-- Workflow Automations Tab Content (hidden by default) -->
+						<section id="tab-content-workflow" style="display:none;">
+							<header class="major">
+								<h2>Workflow Automations</h2>
+								<p>Explore a live n8n workflow below, embedded directly from the n8n interface.</p>
+							</header>
+							<div style="width:100%;max-width:1200px;margin:auto;">
+								<iframe
+									src="https://n8n-h4bz.onrender.com/workflow/VLs0eDBwXj5KsYEy"
+									width="100%"
+									height="800"
+									style="border:1px solid #ccc;border-radius:8px;"
+									allowfullscreen
+									loading="lazy"
+									title="n8n Workflow Demo"
+								></iframe>
+								<noscript>
+									<p>Your browser does not support iframes or JavaScript is disabled.</p>
+								</noscript>
+							</div>
+						</section>
 
 					</div>
 
@@ -357,6 +373,26 @@
 					}
 					slides[slideIndex - 1].style.display = 'block';
 				}
+
+				function showTab(tab) {
+					// Tab buttons
+					document.getElementById('tab-apps').classList.remove('active');
+					document.getElementById('tab-workflow').classList.remove('active');
+					// Tab contents
+					document.getElementById('tab-content-apps').style.display = 'none';
+					document.getElementById('tab-content-workflow').style.display = 'none';
+
+					if (tab === 'apps') {
+						document.getElementById('tab-apps').classList.add('active');
+						document.getElementById('tab-content-apps').style.display = '';
+					} else if (tab === 'workflow') {
+						document.getElementById('tab-workflow').classList.add('active');
+						document.getElementById('tab-content-workflow').style.display = '';
+					}
+				}
+
+				// Optional: Show correct tab on page load (default to Apps)
+				showTab('apps');
 				
 			</script>
 			<script src="assets/js/jquery.min.js"></script>
