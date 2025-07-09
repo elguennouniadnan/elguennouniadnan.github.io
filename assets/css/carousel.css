@@ -1,0 +1,49 @@
+
+.carousel1 {
+    display: flex;
+    overflow: hidden;
+}
+
+.page1 {
+    width: 100%;
+}
+
+.page1 article {
+    padding: 20px;
+}
+
+.screenshots {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overflow-x: hidden;
+}
+
+.screenshots img {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+    margin-right: 0px;
+}
+
+.prev1, .next1 {
+     width: 0px;
+    height: 0px;
+    /* position: absolute; */
+    /*height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s; */
+}
+
+#description p, li {
+    font-size: 0.9rem;
+}
